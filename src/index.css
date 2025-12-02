@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Reset margins just in case */
+body {
+  margin: 0;
+  padding: 0;
+  background: #000; /* Matches your theme */
+}
