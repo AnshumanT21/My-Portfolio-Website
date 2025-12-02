@@ -4,7 +4,7 @@ import HomeScreen from '../Components/HomeScreen';
 import ProjectsScreen from '../Components/ProjectsScreen';
 import HobbiesScreen from '../Components/HobbiesScreen';
 import ContactScreen from '../Components/ContactScreen';
-import GlassSurface from '../components/GlassSurface';
+import GlassSurface from '../Components/GlassSurface';
 import Footer from '../Components/Footer';
 
 // ============================================
