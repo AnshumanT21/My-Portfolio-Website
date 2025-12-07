@@ -176,7 +176,7 @@ const ProjectsScreen = () => {
       challenge: "Designers and developers bookmark countless resources—code snippets, design inspiration, component libraries, tutorials—but they're scattered across browsers, notes apps, and screenshots. When you need something while working, finding that perfect gradient or animation you saved weeks ago becomes a frustrating treasure hunt. How do we create a centralized, mobile-first solution that makes resource management effortless?",
       approach: 'Build a React Native app with intelligent categorization and tagging systems that allow users to save links, screenshots, and code snippets in organized collections. The focus is on speed—quick capture, fast search, and instant access. Features include automatic metadata extraction from URLs, customizable folders, tags for cross-referencing, and offline access to saved resources.',
       results: 'Created a fully functional mobile app with seamless resource saving, smart categorization, and powerful search capabilities. The project demonstrates proficiency in building productivity tools with complex data organization, while solving a real pain point experienced by creative professionals daily.',
-      technologies: ['React Native', 'Python', 'Database (Decide Which One)'],
+      technologies: ['React Native', 'Python', 'Google Firebase Database'],
       year: '2025',
       buttonText: 'In Development',
     },
@@ -497,5 +497,6 @@ const ProjectsScreen = () => {
     </div>
   );
 };
+
 
 export default ProjectsScreen;
