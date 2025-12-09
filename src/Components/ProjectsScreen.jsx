@@ -166,7 +166,7 @@ const ProjectsScreen = () => {
       subtitle: 'A mobile workspace for designers and developers to organize, save, and access their creative resources on the go.',
       handle: 'React Native • Tailwind CSS • Google Firebase',
       image: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1764710966/unnamed_j1ongw.jpg',
-      url: 'https://github.com/AnshumanT21/Dev-Vault',
+      url: 'https://www.devvault.co/',
       borderColor: '#F59E0B',
       gradient: 'linear-gradient(165deg, rgba(245, 158, 11, 0.3), rgba(0,0,0,0.8))',
       shape: 'vault',
@@ -178,7 +178,6 @@ const ProjectsScreen = () => {
       results: 'Created a fully functional mobile app with seamless resource saving, smart categorization, and powerful search capabilities. The project demonstrates proficiency in building productivity tools with complex data organization, while solving a real pain point experienced by creative professionals daily.',
       technologies: ['React Native', 'Tailwind CSS', 'Google Firebase Database'],
       year: '2025',
-      buttonText: 'In Development',
     },
   ];
 
@@ -500,4 +499,5 @@ const ProjectsScreen = () => {
 
 
 export default ProjectsScreen;
+
 
