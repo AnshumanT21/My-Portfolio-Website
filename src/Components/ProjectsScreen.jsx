@@ -126,6 +126,24 @@ const ProjectsScreen = () => {
 
   const projects = [
     {
+      title: 'Dev Vault',
+      subtitle: 'A Website for designers and developers to organize, save, and access their creative resources on the go.',
+      handle: 'React Native • Tailwind CSS • Google Firebase',
+      image: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1765138992/949111f4-e81b-4279-bc04-c18d90af7f7a_nb3j5l.png',
+      url: 'https://www.devvault.co/',
+      borderColor: '#F59E0B',
+      gradient: 'linear-gradient(165deg, rgba(245, 158, 11, 0.3), rgba(0,0,0,0.8))',
+      shape: 'vault',
+
+      category: 'Mobile App',
+      description: "Dev Vault is a centralized resource management website built for creative professionals who constantly discover inspiration across the web. Whether it's a useful React component, a color palette, a design system, or a helpful article, Dev Vault keeps everything organized and accessible from your pocket—eliminating the chaos of scattered bookmarks and forgotten links.",
+      challenge: "Designers and developers bookmark countless resources—code snippets, design inspiration, component libraries, tutorials—but they're scattered across browsers, notes apps, and screenshots. When you need something while working, finding that perfect gradient or animation you saved weeks ago becomes a frustrating treasure hunt. How do we create a centralized, mobile-first solution that makes resource management effortless?",
+      approach: 'Build a React Native app with intelligent categorization and tagging systems that allow users to save links, screenshots, and code snippets in organized collections. The focus is on speed—quick capture, fast search, and instant access. Features include automatic metadata extraction from URLs, customizable folders, tags for cross-referencing, and offline access to saved resources.',
+      results: 'Created a fully functional website with seamless resource saving, smart categorization, and powerful search capabilities. The project demonstrates proficiency in building productivity tools with complex data organization, while solving a real pain point experienced by creative professionals daily.',
+      technologies: ['React Native', 'Tailwind CSS', 'Google Firebase Database'],
+      year: '2025',
+    },
+    {
       title: 'Try It On!',
       subtitle: 'Uses AI to create a 3D model from your photo.',
       handle: 'Python • React Native • Supabase',
@@ -160,24 +178,6 @@ const ProjectsScreen = () => {
       results: 'Developed a complete end-to-end mobile application, gaining hands-on experience with React Native, state management, and cross-platform development. The project proved my ability to transform a social impact idea into a working technical solution.',
       technologies: ['Javascript', 'React Native', 'Firebase'],
       year: '2022'
-    },
-    {
-      title: 'Dev Vault',
-      subtitle: 'A mobile workspace for designers and developers to organize, save, and access their creative resources on the go.',
-      handle: 'React Native • Tailwind CSS • Google Firebase',
-      image: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1764710966/unnamed_j1ongw.jpg',
-      url: 'https://www.devvault.co/',
-      borderColor: '#F59E0B',
-      gradient: 'linear-gradient(165deg, rgba(245, 158, 11, 0.3), rgba(0,0,0,0.8))',
-      shape: 'vault',
-
-      category: 'Mobile App',
-      description: "Dev Vault is a centralized resource management app built for creative professionals who constantly discover inspiration across the web. Whether it's a useful React component, a color palette, a design system, or a helpful article, Dev Vault keeps everything organized and accessible from your pocket—eliminating the chaos of scattered bookmarks and forgotten links.",
-      challenge: "Designers and developers bookmark countless resources—code snippets, design inspiration, component libraries, tutorials—but they're scattered across browsers, notes apps, and screenshots. When you need something while working, finding that perfect gradient or animation you saved weeks ago becomes a frustrating treasure hunt. How do we create a centralized, mobile-first solution that makes resource management effortless?",
-      approach: 'Build a React Native app with intelligent categorization and tagging systems that allow users to save links, screenshots, and code snippets in organized collections. The focus is on speed—quick capture, fast search, and instant access. Features include automatic metadata extraction from URLs, customizable folders, tags for cross-referencing, and offline access to saved resources.',
-      results: 'Created a fully functional mobile app with seamless resource saving, smart categorization, and powerful search capabilities. The project demonstrates proficiency in building productivity tools with complex data organization, while solving a real pain point experienced by creative professionals daily.',
-      technologies: ['React Native', 'Tailwind CSS', 'Google Firebase Database'],
-      year: '2025',
     },
   ];
 
@@ -499,5 +499,6 @@ const ProjectsScreen = () => {
 
 
 export default ProjectsScreen;
+
 
 
