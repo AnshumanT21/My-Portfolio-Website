@@ -232,8 +232,8 @@ const HomeScreen = ({ setActivePage }) => {
                   <div>
                     <p className="text-[#FFFDD0]/70 leading-relaxed mb-4">
                       <DecryptedText
-                        text="I spend most of my time building things—currently, that's Dev Vault, a platform helping developers organize their scattered resources. But the more I build, the more I realize I want to create solutions that reach beyond just developers."
-                        speed={200}
+                        text="As a sophomore Computer Engineering major at UMass Amherst who's always been drawn to the intersection of technology and real-world impact. I spend most of my time building things—currently, that's Dev Vault, a platform I created to help developers organize their scattered resources, from code snippets to color palettes to component libraries. It started as a solution to my own frustration with bookmarks everywhere, but it's grown into something I'm genuinely proud of."
+                        speed={50}
                         maxIterations={20}
                         animateOn="view"
                         revealDirection="start"
@@ -241,8 +241,8 @@ const HomeScreen = ({ setActivePage }) => {
                     </p>
                     <p className="text-[#FFFDD0]/70 leading-relaxed mb-4">
                       <DecryptedText
-                        text="That's why I'm diving into AI and exploring how it can tackle real-world challenges for diverse audiences. I'm not interested in building for the sake of building—I want to make something that genuinely helps people, whether that's through better tools, smarter automation, or entirely new ways of solving old problems."
-                        speed={250}
+                        text="But the more I build, the more I realize I want to create solutions that reach beyond just the developer community. That's why I'm diving deep into AI and exploring how it can tackle real-world challenges for diverse audiences. I'm fascinated by the potential to make technology more accessible, to streamline workflows in unexpected industries, and to solve problems that people don't even realize can be solved yet. I'm not interested in building for the sake of building—I want to make something that genuinely helps people, whether that's through better tools, smarter automation, or entirely new ways of approaching old problems."
+                        speed={75}
                         maxIterations={20}
                         animateOn="view"
                         revealDirection="start"
@@ -250,8 +250,8 @@ const HomeScreen = ({ setActivePage }) => {
                     </p>
                     <p className="text-[#FFFDD0]/70 leading-relaxed">
                       <DecryptedText
-                        text="I love collaborating with people who think differently than I do. If you're working on something interesting—whether you're technical or not—I'd love to connect. The best projects happen when different perspectives come together around a shared goal."
-                        speed={300}
+                        text="What excites me most about this journey is collaboration. I love working with people who think differently than I do—whether you're a software developer with a technical challenge, an entrepreneur with a vision, a designer focused on user experience, or someone from a completely different field with an idea that needs technical execution. If you're working on something interesting or have an idea you're passionate about, I'd genuinely love to hear about it. Let's explore what we can build together."
+                        speed={100}
                         maxIterations={20}
                         animateOn="view"
                         revealDirection="start"
