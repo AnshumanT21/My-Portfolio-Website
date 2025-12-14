@@ -232,8 +232,8 @@ const HomeScreen = ({ setActivePage }) => {
                   <div>
                     <p className="text-[#FFFDD0]/70 leading-relaxed mb-4">
                       <DecryptedText
-                        text="I build software that bridges the gap between technical complexity and human need. As a scholar in the UMass iCons program, I am constantly challenged to develop integrated solutions for real-world problems—a philosophy that drives my personal development work."
-                        speed={100}
+                        text="I spend most of my time building things—currently, that's Dev Vault, a platform helping developers organize their scattered resources. But the more I build, the more I realize I want to create solutions that reach beyond just developers."
+                        speed={200}
                         maxIterations={20}
                         animateOn="view"
                         revealDirection="start"
@@ -241,8 +241,8 @@ const HomeScreen = ({ setActivePage }) => {
                     </p>
                     <p className="text-[#FFFDD0]/70 leading-relaxed mb-4">
                       <DecryptedText
-                        text="When I'm not coding, you'll find me exploring new technologies, contributing to open source, or capturing moments through photography. Most recently, this led to the creation of Try It On!, where I leveraged AI to solve the 'fit' problem in online shopping through 3D visualization. I am a curious engineer looking for opportunities to apply my full-stack skills to projects that demand both technical excellence and social impact."
-                        speed={100}
+                        text="That's why I'm diving into AI and exploring how it can tackle real-world challenges for diverse audiences. I'm not interested in building for the sake of building—I want to make something that genuinely helps people, whether that's through better tools, smarter automation, or entirely new ways of solving old problems."
+                        speed={250}
                         maxIterations={20}
                         animateOn="view"
                         revealDirection="start"
@@ -250,8 +250,8 @@ const HomeScreen = ({ setActivePage }) => {
                     </p>
                     <p className="text-[#FFFDD0]/70 leading-relaxed">
                       <DecryptedText
-                        text="Got an interesting project or idea? I'm always up for a conversation. Whether it's a challenging technical problem, a creative collaboration, or just an innovative concept you want to explore, reach out via email or LinkedIn. Let's build something great together."
-                        speed={100}
+                        text="I love collaborating with people who think differently than I do. If you're working on something interesting—whether you're technical or not—I'd love to connect. The best projects happen when different perspectives come together around a shared goal."
+                        speed={300}
                         maxIterations={20}
                         animateOn="view"
                         revealDirection="start"
