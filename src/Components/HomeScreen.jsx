@@ -122,6 +122,18 @@ const HomeScreen = ({ setActivePage }) => {
       ]
     },
     {
+      type: 'education',
+      icon: GraduationCap,
+      title: 'High School',
+      company: 'Modern School Barakhamba Road, New Delhi',
+      period: '2022 - 2024',
+      description: 'High school graduate with strong academic performance and active involvement in technical clubs.',
+      achievements: [
+        "Technical Head of the Lenscraft Club",
+        'Member of the prestigious Bits n Bytes Club',
+      ]
+    },
+    {
       type: 'certification',
       icon: Award,
       title: 'Certified Android and IOS Developer',
