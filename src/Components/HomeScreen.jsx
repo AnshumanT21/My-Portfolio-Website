@@ -241,7 +241,7 @@ const HomeScreen = ({ setActivePage }) => {
                     </p>
                     <p className="text-[#FFFDD0]/70 leading-relaxed mb-4">
                       <DecryptedText
-                        text="But the more I build, the more I realize I want to create solutions that reach beyond just the developer community. That's why I'm diving deep into AI and exploring how it can tackle real-world challenges for diverse audiences. I'm fascinated by the potential to make technology more accessible, to streamline workflows in unexpected industries, and to solve problems that people don't even realize can be solved yet. I'm not interested in building for the sake of building—I want to make something that genuinely helps people, whether that's through better tools, smarter automation, or entirely new ways of approaching old problems."
+                        text="But the more I build, the more I realize I want to create solutions that reach beyond just the developer community. That's why I'm diving deep into AI and exploring how it can tackle real-world challenges for diverse audiences. I'm fascinated by the potential to make technology more accessible, to streamline workflows in unexpected industries, and to solve problems that people don't even realize can be solved yet. I want to make something that genuinely helps people, whether that's through better tools, smarter automation, or entirely new ways of approaching old problems."
                         speed={75}
                         maxIterations={20}
                         animateOn="view"
@@ -250,7 +250,7 @@ const HomeScreen = ({ setActivePage }) => {
                     </p>
                     <p className="text-[#FFFDD0]/70 leading-relaxed">
                       <DecryptedText
-                        text="What excites me most about this journey is collaboration. I love working with people who think differently than I do—whether you're a software developer with a technical challenge, an entrepreneur with a vision, a designer focused on user experience, or someone from a completely different field with an idea that needs technical execution. If you're working on something interesting or have an idea you're passionate about, I'd genuinely love to hear about it. Let's explore what we can build together."
+                        text="If you're working on something interesting or have an idea you're passionate about, I'd genuinely love to hear about it. Let's explore what we can build together."
                         speed={100}
                         maxIterations={20}
                         animateOn="view"
