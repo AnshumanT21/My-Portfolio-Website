@@ -147,7 +147,7 @@ const ProjectsScreen = () => {
   title: 'Concierge AI',
   subtitle: 'A B2B conversational AI platform that lets travel and hospitality companies deploy branded, knowledge-grounded chatbots in minutes.',
   handle: 'FastAPI • React • OpenAI Realtime API',
-  image: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1786565788/5ed8f718-2312-40a7-b300-10b65cee2762.png',
+  image: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1786566337/3651fa92-6e3c-4586-b8f4-ba6d30d413cd.png',
   url: 'PLACEHOLDER_URL',
   borderColor: '#8B5CF6',
   gradient: 'linear-gradient(150deg, rgba(139, 92, 246, 0.3), rgba(0,0,0,0.8))',
