@@ -165,7 +165,7 @@ const ProjectsScreen = () => {
   title: 'Signal Desk',
   subtitle: 'A real-time social listening and sentiment analytics dashboard that aggregates brand mentions across the web.',
   handle: 'Python • FastAPI • React/Vite',
-  image: 'PLACEHOLDER_IMAGE_URL',
+  image: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1786566535/565c7149-77d7-4650-b799-1c3812137cb2.png',
   url: 'PLACEHOLDER_URL',
   borderColor: '#EC4899',
   gradient: 'linear-gradient(200deg, rgba(236, 72, 153, 0.3), rgba(0,0,0,0.8))',
