@@ -1,16 +1,28 @@
-# React + Vite
+# Portfolio v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Anshuman Tyagi's interactive portfolio. Vite, React, Tailwind v4, Motion and matter-js.
 
-Currently, two official plugins are available:
+```bash
+npm install
+npm run dev
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`npm run build` outputs a static site to `dist/` (relative paths, so it works on GitHub Pages under any repo name).
 
-## React Compiler
+## Where things live
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/data.js`: all copy, projects, experience and hobbies. Edit this to change content.
+- `src/components/ProjectsStage.jsx`: the falling "My projects" title and Sprout's behaviour.
+- `src/components/Sprout.jsx` + `sprout.css`: the Sprout character and its poses.
+- `src/secrets.jsx`: the easter egg tracker and keyboard secrets.
+- `src/index.css`: day/night color tokens.
 
-## Expanding the ESLint configuration
+## The 7 secrets
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Pull the lamp string in the top right corner.
+2. Click the letters of the name 7 times.
+3. Hover or tap the "My projects" title.
+4. Click Sprout 10 times.
+5. Click the AT logo 5 times quickly.
+6. Type "sprout".
+7. Double-click the top of the "Six things I grow" tree.

@@ -1,0 +1,72 @@
+.sprout {
+  overflow: visible;
+  transition: transform 0.25s ease;
+}
+.sprout * {
+  transform-box: view-box;
+}
+.sprout .leg-l { transform-origin: 42px 106px; }
+.sprout .leg-r { transform-origin: 57px 106px; }
+.sprout .arm-l { transform-origin: 37px 76px; transition: transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1); }
+.sprout .arm-r { transform-origin: 63px 76px; transition: transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1); }
+.sprout .sprout-body { transform-origin: 50px 126px; transition: transform 0.35s cubic-bezier(0.3, 1.4, 0.5, 1); }
+.sprout .head { transform-origin: 50px 70px; }
+
+.sprout .eye-glow { fill: #f4ffb0; opacity: 0; transition: opacity 0.6s ease; }
+[data-theme='night'] .sprout .eye-glow { opacity: 0.18; }
+
+.sprout-pop {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: sprout-pop 0.5s cubic-bezier(0.3, 1.7, 0.5, 1) both;
+}
+@keyframes sprout-pop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+/* idle: a slow breath and a blink */
+.sprout[data-mood='idle'] .head { animation: sprout-breathe 3.2s ease-in-out infinite; }
+.sprout[data-mood='idle'] .eyes { transform-box: view-box; transform-origin: 50px 46px; animation: sprout-blink 4.6s infinite; }
+@keyframes sprout-breathe { 50% { transform: translateY(1.5px) rotate(-1.5deg); } }
+@keyframes sprout-blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(0.1); } }
+
+/* walk */
+.sprout[data-mood='walk'] .leg-l { animation: sprout-step 0.5s ease-in-out infinite; }
+.sprout[data-mood='walk'] .leg-r { animation: sprout-step 0.5s ease-in-out infinite reverse; }
+.sprout[data-mood='walk'] .arm-l { animation: sprout-swing 0.5s ease-in-out infinite; }
+.sprout[data-mood='walk'] .arm-r { animation: sprout-swing 0.5s ease-in-out infinite reverse; }
+.sprout[data-mood='walk'] .head { animation: sprout-bob 0.25s ease-in-out infinite alternate; }
+@keyframes sprout-step { 0%, 100% { transform: rotate(18deg); } 50% { transform: rotate(-18deg); } }
+@keyframes sprout-swing { 0%, 100% { transform: rotate(-14deg); } 50% { transform: rotate(14deg); } }
+@keyframes sprout-bob { to { transform: translateY(-2px); } }
+
+/* scared: arms up, whole body trembles */
+.sprout[data-mood='scared'] .arm-l { transform: rotate(125deg); }
+.sprout[data-mood='scared'] .arm-r { transform: rotate(-125deg); }
+.sprout[data-mood='scared'] .sprout-body { animation: sprout-shake 0.09s linear infinite; }
+@keyframes sprout-shake { 0% { transform: translateX(-1.5px); } 50% { transform: translateX(1.5px); } 100% { transform: translateX(-1.5px); } }
+
+/* wave */
+.sprout[data-mood='wave'] .arm-r { animation: sprout-wave 0.34s ease-in-out infinite alternate; }
+@keyframes sprout-wave { from { transform: rotate(-150deg); } to { transform: rotate(-105deg); } }
+
+/* fallen: tipped over on its back */
+.sprout[data-mood='fallen'] .sprout-body { transform: rotate(-88deg) translateY(10px); }
+
+/* dance */
+.sprout[data-mood='dance'] .sprout-body { animation: sprout-dance 0.6s ease-in-out infinite; }
+.sprout[data-mood='dance'] .arm-l { animation: sprout-arms 0.3s ease-in-out infinite alternate; }
+.sprout[data-mood='dance'] .arm-r { animation: sprout-arms-r 0.3s ease-in-out infinite alternate-reverse; }
+@keyframes sprout-dance {
+  0%, 100% { transform: rotate(-8deg) translateY(0); }
+  25% { transform: rotate(0) translateY(-8px); }
+  50% { transform: rotate(8deg) translateY(0); }
+  75% { transform: rotate(0) translateY(-8px); }
+}
+@keyframes sprout-arms { from { transform: rotate(110deg); } to { transform: rotate(150deg); } }
+@keyframes sprout-arms-r { from { transform: rotate(-110deg); } to { transform: rotate(-150deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sprout * { animation: none !important; }
+}

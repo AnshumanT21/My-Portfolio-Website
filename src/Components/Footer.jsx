@@ -1,95 +1,83 @@
-import React from 'react';
-import { ArrowUp, Mail, Linkedin } from 'lucide-react';
-import GlassSurface from './GlassSurface';
+import { useRef, useState } from 'react'
+import { motion, useAnimate, useReducedMotion } from 'motion/react'
+import { SoccerBall } from '@phosphor-icons/react'
 
-const Footer = ({ setActivePage }) => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+const readBest = () => {
+  try {
+    return Number(localStorage.getItem('keepie-best')) || 0
+  } catch {
+    return 0
+  }
+}
+
+// Keepie-uppies: tap the ball before it lands to keep the streak going.
+function Ball() {
+  const reduce = useReducedMotion()
+  const [scope, animate] = useAnimate()
+  const [count, setCount] = useState(0)
+  const [best, setBest] = useState(readBest)
+  const flight = useRef(0)
+  const streak = useRef(0)
+
+  const kick = () => {
+    if (reduce) return
+    const id = ++flight.current
+    streak.current += 1
+    const n = streak.current
+    setCount(n)
+    if (n > best) {
+      setBest(n)
+      try {
+        localStorage.setItem('keepie-best', String(n))
+      } catch {
+        /* best score just won't persist */
+      }
+    }
+
+    const height = 130 + Math.random() * 60
+    const drift = (Math.random() - 0.5) * 80
+    animate(
+      scope.current,
+      { y: [null, -height, 0], x: [null, drift, drift * 1.6], rotate: [null, drift * 4, drift * 8] },
+      { duration: 1.3, times: [0, 0.45, 1], ease: ['easeOut', 'easeIn'] },
+    ).then(() => {
+      // Landed without another touch: the streak is over and the ball rolls home.
+      if (flight.current !== id) return
+      streak.current = 0
+      setCount(0)
+      animate(scope.current, { x: 0, rotate: 0 }, { type: 'spring', stiffness: 60, damping: 12 })
+    })
+  }
 
   return (
-    <footer className="w-full flex justify-center pb-6 px-4 mt-auto relative z-40 font-['Love_Ya_Like_A_Sister']">
-      {/* Import Font locally for this component just in case */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
-      `}</style>
+    <div className="flex items-end gap-4">
+      <motion.button
+        ref={scope}
+        type="button"
+        onClick={kick}
+        whileHover={{ scale: 1.1 }}
+        aria-label="Kick the ball"
+        className="relative z-[1] text-ink"
+      >
+        <SoccerBall size={44} weight="duotone" />
+      </motion.button>
+      <p className="pb-2 font-mono text-xs text-ink-soft">
+        keepie-uppies {count}
+        <span className="mx-2 opacity-40">/</span>best {best}
+      </p>
+    </div>
+  )
+}
 
-      <div className="w-full max-w-7xl">
-        <GlassSurface
-          width="100%"
-          height="auto"
-          borderRadius={24}
-          className="shadow-2xl"
-          blur={20}
-          borderWidth={0.05}
-          opacity={0.6}
-          brightness={40} // Slightly darker for footer
-        >
-          <div className="w-full px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
-            
-            {/* Left: Logo & Copyright */}
-            <div className="flex flex-col items-center md:items-start gap-2">
-              <div className="flex items-center gap-3">
-                {/* Logo Box */}
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FFFDD0] to-[#421F16] flex items-center justify-center shadow-lg">
-                  <span className="text-[#421F16] font-bold text-lg">AT</span>
-                </div>
-                <span className="text-[#FFFDD0] text-xl font-bold">Portfolio</span>
-              </div>
-              <p className="text-[#FFFDD0]/60 text-xs font-sans tracking-wide">
-                © 2025 All rights reserved.
-              </p>
-            </div>
-
-            {/* Center: Navigation */}
-            <nav className="flex items-center gap-8">
-              {['Home', 'Projects', 'Contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => setActivePage(item.toLowerCase())}
-                  className="text-[#FFFDD0]/80 hover:text-[#FFFDD0] text-lg transition-colors font-medium"
-                >
-                  {item}
-                </button>
-              ))}
-            </nav>
-
-            {/* Right: Socials & Scroll Top */}
-            <div className="flex items-center gap-4">
-              {/* LinkedIn */}
-              <a 
-                href="https://www.linkedin.com/in/anshuman-tyagi-955455315/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#FFFDD0]/10 hover:bg-[#FFFDD0]/20 flex items-center justify-center transition-all border border-[#FFFDD0]/10 group"
-              >
-                <Linkedin className="w-5 h-5 text-[#FFFDD0] group-hover:scale-110 transition-transform" />
-              </a>
-
-              {/* Email */}
-              <a 
-                href="mailto:anshumantyagi20@gmail.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#FFFDD0]/10 hover:bg-[#FFFDD0]/20 flex items-center justify-center transition-all border border-[#FFFDD0]/10 group"
-              >
-                <Mail className="w-5 h-5 text-[#FFFDD0] group-hover:scale-110 transition-transform" />
-              </a>
-
-              {/* Scroll to Top */}
-              <button 
-                onClick={scrollToTop}
-                className="w-10 h-10 rounded-full bg-[#FFFDD0] hover:bg-white flex items-center justify-center transition-all shadow-lg group"
-              >
-                <ArrowUp className="w-5 h-5 text-[#421F16] group-hover:-translate-y-1 transition-transform" />
-              </button>
-            </div>
-
-          </div>
-        </GlassSurface>
+export default function Footer() {
+  return (
+    <footer className="mx-auto max-w-[1400px] px-4 pb-10 pt-40 md:px-8">
+      <div className="flex flex-col justify-between gap-8 border-t-2 border-ink pt-4 md:flex-row md:items-end">
+        <Ball />
+        <p className="text-sm text-ink-soft">
+          © {new Date().getFullYear()} Anshuman Tyagi. Built with React, Motion and matter-js.
+        </p>
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}
