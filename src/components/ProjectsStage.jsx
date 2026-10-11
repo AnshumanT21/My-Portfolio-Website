@@ -332,6 +332,11 @@ export default function ProjectsStage() {
         )}
       </h2>
 
+      {/* Keyboard-only secret, so the hint is hidden on touch-sized screens. */}
+      <p className="pointer-events-none absolute -bottom-7 right-0 hidden font-mono text-xs text-ink-soft md:block">
+        Psst. Type “sprout” on your keyboard.
+      </p>
+
       <div ref={sproutRef} className="absolute bottom-0 left-0 z-[1]" style={{ width: SPROUT_W }}>
         <AnimatePresence>
           {bubble && (
