@@ -20,7 +20,7 @@ npm run dev
 ## The 7 secrets
 
 1. Pull the lamp string in the top right corner.
-2. Click the letters of the name 7 times.
+2. Click the letters of the name twice.
 3. Hover or tap the "My projects" title.
 4. Click Sprout 10 times.
 5. Click the AT logo 5 times quickly.

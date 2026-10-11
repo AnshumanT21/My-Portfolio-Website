@@ -94,7 +94,7 @@ export default function KineticName({ lines, className = '' }) {
 
   const onHop = () => {
     hops.current += 1
-    if (hops.current % 7 === 0 && !reduce) {
+    if (hops.current % 2 === 0 && !reduce) {
       letters.current.forEach((l, i) => setTimeout(() => l?.scatter(), i * 25))
       unlock('scatter')
     }

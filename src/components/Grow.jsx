@@ -567,7 +567,7 @@ export default function Grow() {
           type="button"
           onClick={tapTop}
           aria-label="Tap the treetop twice"
-          className="absolute h-14 w-14 -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="absolute h-24 w-24 -translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-full"
           style={{ left: `${(G.treetop.x / G.w) * 100}%`, top: `${(G.treetop.y / G.h) * 100}%` }}
         />
 
@@ -591,7 +591,7 @@ export default function Grow() {
                 Keep scrolling to grow it <motion.span className="ml-2 tabular-nums">{percent}</motion.span>
               </>
             ) : active === null ? (
-              tall ? 'Tap a branch.' : 'Hover a branch.'
+              tall ? 'Tap a branch. Double-tap the treetop for a surprise.' : 'Hover a branch. Double-click the treetop for a surprise.'
             ) : (
               crafts[active].note
             )}
