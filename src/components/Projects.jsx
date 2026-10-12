@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'motion/react'
-import { ArrowUpRight, GithubLogo, X } from '@phosphor-icons/react'
+import { ArrowUpRight } from '@phosphor-icons/react'
 import { projects } from '../data'
 import ProjectsStage from './ProjectsStage'
+import ProjectModal from './ProjectModal'
 
 // Grid placement per project: the featured one is large, the rest vary in size.
 const LAYOUT = {
@@ -93,95 +95,6 @@ function Card({ p, onOpen, i }) {
   )
 }
 
-function Modal({ p, onClose }) {
-  useEffect(() => {
-    const onKey = (e) => e.key === 'Escape' && onClose()
-    window.addEventListener('keydown', onKey)
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      window.removeEventListener('keydown', onKey)
-      document.body.style.overflow = prev
-    }
-  }, [onClose])
-
-  const isGit = p.url?.includes('github.com')
-
-  return (
-    <div className="fixed inset-0 z-20 flex items-end justify-center p-0 md:items-center md:p-8" role="dialog" aria-modal="true" aria-labelledby={`t-${p.id}`}>
-      <motion.div
-        className="absolute inset-0 bg-[#0b120e]/60 backdrop-blur-sm"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        onClick={onClose}
-      />
-      <motion.div
-        layoutId={`card-${p.id}`}
-        style={{ borderRadius: 14 }}
-        className="relative max-h-[92dvh] w-full max-w-3xl overflow-y-auto overscroll-contain bg-paper"
-      >
-        <div className="relative aspect-[16/8] w-full overflow-hidden">
-          <motion.img layoutId={`img-${p.id}`} src={p.image} alt={`${p.title} preview`} className="absolute inset-0 h-full w-full object-cover" />
-        </div>
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
-          autoFocus
-          className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-paper text-ink shadow-lg transition hover:rotate-90 hover:bg-ink hover:text-paper"
-        >
-          <X size={18} weight="bold" />
-        </button>
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ delay: 0.15, duration: 0.4 }}
-          className="p-6 md:p-10"
-        >
-          <p className="font-mono text-xs text-accent">{p.status}</p>
-          <h3 id={`t-${p.id}`} className="mt-2 text-4xl font-bold tracking-[-0.04em] text-ink md:text-5xl">
-            {p.title}
-          </h3>
-          <p className="mt-3 max-w-[60ch] text-lg leading-relaxed text-ink-soft">{p.blurb}</p>
-
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
-            <div>
-              <h4 className="text-sm font-semibold text-ink">The problem</h4>
-              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">{p.challenge}</p>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-ink">What came of it</h4>
-              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">{p.results}</p>
-            </div>
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-2">
-            {p.stack.map((t) => (
-              <span key={t} className="rounded-full border border-line px-3 py-1 font-mono text-xs text-ink-soft">
-                {t}
-              </span>
-            ))}
-          </div>
-
-          {p.url && (
-            <a
-              href={p.url}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 font-semibold text-accent-ink transition active:scale-[0.97]"
-            >
-              {isGit ? <GithubLogo size={18} weight="bold" /> : <ArrowUpRight size={18} weight="bold" />}
-              {isGit ? 'View on GitHub' : 'Visit the site'}
-            </a>
-          )}
-        </motion.div>
-      </motion.div>
-    </div>
-  )
-}
-
 export default function Projects() {
   const [open, setOpen] = useState(null)
 
@@ -193,7 +106,11 @@ export default function Projects() {
           <Card key={p.id} p={p} i={i} onOpen={setOpen} />
         ))}
       </div>
-      <AnimatePresence>{open && <Modal key={open.id} p={open} onClose={() => setOpen(null)} />}</AnimatePresence>
+      {/* Rendered on <body> so it sits above the fixed nav, which lives outside <main>. */}
+      {createPortal(
+        <AnimatePresence>{open && <ProjectModal key={open.id} p={open} onClose={() => setOpen(null)} />}</AnimatePresence>,
+        document.body,
+      )}
     </section>
   )
 }

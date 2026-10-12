@@ -17,6 +17,21 @@ npm run dev
 - `src/secrets.jsx`: the easter egg tracker and keyboard secrets.
 - `src/index.css`: day/night color tokens.
 
+## Adding photos and videos to a project
+
+Each project in `src/data.js` can have a `media` list. The project view shows the items in order,
+with thumbnails when there is more than one. Without `media`, it shows the project's card image.
+
+```js
+media: [
+  { type: 'video', src: 'media/claimiq-demo.mp4', poster: 'media/claimiq-poster.jpg', caption: 'Optional caption' },
+  { type: 'image', src: 'media/claimiq-dashboard.png', caption: 'Optional caption' },
+],
+```
+
+Put the files in `public/media/` (or use a full `https://` link). Keep videos small: 720p MP4,
+ideally under 3 MB, with a still image as the `poster`. Videos start muted, as browsers require.
+
 ## The 7 secrets
 
 1. Pull the lamp string in the top right corner.

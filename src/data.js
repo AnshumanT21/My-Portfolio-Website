@@ -11,6 +11,26 @@ export const skills = [
 export const projects = [
   {
     id: 'claimiq',
+    when: '2026',
+    where: 'Independent product',
+    // media: what the project view shows, in order. Each item is
+    // { type: 'video', src, poster } or { type: 'image', src }, with an optional caption.
+    media: [
+      { type: 'video', src: 'media/claimiq-demo.mp4', poster: 'media/claimiq-poster.jpg', caption: 'A 30-second walkthrough: one cattle claim, 17 scanned pages, one finished report.' },
+      { type: 'image', src: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1786565570/0fe5cc2d-4f3b-47bb-bb64-150051468a8c.png', caption: 'The sign-in page at claimiq.in.' },
+    ],
+    // Figures as stated on claimiq.in.
+    stats: [
+      { value: '10+', label: 'document types sorted automatically' },
+      { value: '< 30s', label: 'to draft an ILA or FSR report' },
+      { value: '100%', label: 'of fields reviewed by the surveyor' },
+    ],
+    steps: [
+      'Splits a scanned bundle into its separate documents and sorts every page',
+      'Reads every field and flags the ones it isn’t sure of',
+      'Checks each document against the others for mismatches',
+      'Writes the survey report in the official format',
+    ],
     title: 'ClaimIQ',
     category: 'AI SaaS platform',
     blurb: 'Reads raw insurance claim documents and writes the client-ready report.',
@@ -25,6 +45,14 @@ export const projects = [
   },
   {
     id: 'concierge',
+    when: 'Summer 2026',
+    where: 'Internship at Aionos',
+    steps: [
+      'A company uploads its SOPs, FAQs and policy documents',
+      'Those become a private knowledge base for that company only',
+      'A branded chatbot goes onto their site with one embed snippet',
+      'Guests can also talk to it, through a voice bot with real-time audio',
+    ],
     title: 'Concierge AI',
     category: 'B2B AI platform',
     blurb: 'Branded hotel and travel chatbots that only answer from the company’s own documents.',
@@ -39,6 +67,14 @@ export const projects = [
   },
   {
     id: 'signal',
+    when: 'Summer 2026',
+    where: 'Internship at Aionos',
+    steps: [
+      'Collects brand and topic mentions from several sources',
+      'Normalizes them into one consistent format',
+      'Scores the sentiment of each mention',
+      'Shows the result in three live dashboard views',
+    ],
     title: 'Signal Desk',
     category: 'Analytics platform',
     blurb: 'Pulls brand mentions from across the web into one live sentiment dashboard.',
@@ -53,6 +89,18 @@ export const projects = [
   },
   {
     id: 'devvault',
+    when: 'December 2025',
+    where: 'Personal project',
+    media: [
+      { type: 'video', src: 'media/devvault-demo.mp4', poster: 'media/devvault-poster.jpg', caption: 'A 30-second tour of the four vaults: code, colour palettes, resources and projects.' },
+      { type: 'image', src: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1765138992/949111f4-e81b-4279-bc04-c18d90af7f7a_nb3j5l.png', caption: 'The Dev Vault logo.' },
+    ],
+    steps: [
+      'Code Vault: save a component or snippet once and find it again in milliseconds',
+      'Color Palettes: save a palette, then click any swatch to copy its hex code',
+      'Resources: inspiration, docs and tools, tagged and searchable',
+      'Projects: link saved items to the project they belong to',
+    ],
     title: 'Dev Vault',
     category: 'Web app',
     blurb: 'One place for the snippets, palettes and components you keep bookmarking and losing.',
@@ -67,6 +115,13 @@ export const projects = [
   },
   {
     id: 'tryiton',
+    when: 'November 2025',
+    where: 'Personal project',
+    steps: [
+      'Take or upload a single photo of yourself',
+      'AI turns it into a 3D model',
+      'Put clothes on the model and rotate it to see every angle',
+    ],
     title: 'Try It On!',
     category: 'Mobile app',
     blurb: 'Turns a single photo of you into a 3D model you can dress up.',
@@ -79,6 +134,13 @@ export const projects = [
   },
   {
     id: 'booksanta',
+    when: '2022',
+    where: 'WhiteHat Jr certification project',
+    steps: [
+      'Donors list the books they are done with',
+      'Readers nearby request the ones they want',
+      'The app connects the two so the book changes hands',
+    ],
     title: 'Book Santa',
     category: 'Mobile app',
     blurb: 'A peer-to-peer app for giving away and finding books near you.',
