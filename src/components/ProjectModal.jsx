@@ -25,6 +25,21 @@ function VideoPlayer({ item, title }) {
     }
   }, [reduce])
 
+  // The browser's timeupdate event only fires about four times a second, which makes the
+  // bar step. Reading the time on every animation frame while playing keeps it smooth.
+  const paint = () => {
+    const v = video.current
+    if (bar.current && v?.duration) bar.current.style.transform = `scaleX(${v.currentTime / v.duration})`
+  }
+  useEffect(() => {
+    if (!playing) return
+    let raf = requestAnimationFrame(function tick() {
+      paint()
+      raf = requestAnimationFrame(tick)
+    })
+    return () => cancelAnimationFrame(raf)
+  }, [playing])
+
   const toggle = () => {
     const v = video.current
     if (v.paused) v.play().catch(() => {})
@@ -34,6 +49,7 @@ function VideoPlayer({ item, title }) {
     const v = video.current
     const r = e.currentTarget.getBoundingClientRect()
     if (v.duration) v.currentTime = ((e.clientX - r.left) / r.width) * v.duration
+    paint()
   }
 
   return (
@@ -49,10 +65,7 @@ function VideoPlayer({ item, title }) {
         onClick={toggle}
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
-        onTimeUpdate={(e) => {
-          const v = e.currentTarget
-          if (bar.current && v.duration) bar.current.style.transform = `scaleX(${v.currentTime / v.duration})`
-        }}
+        onSeeked={paint}
         aria-label={`${title} demo video`}
         className="h-full w-full cursor-pointer object-contain"
       />
