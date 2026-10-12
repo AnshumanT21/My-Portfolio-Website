@@ -8,13 +8,12 @@
     <meta name="description" content="Anshuman Tyagi, Computer Engineering student at UMass Amherst building AI tools for real work." />
     <title>Anshuman Tyagi</title>
     <script>
-      // Set the theme before first paint so there is no flash.
+      // Set the theme before first paint so there is no flash. The site opens in night
+      // mode by default; pulling the lamp saves the visitor's own choice for next time.
       try {
-        var t = localStorage.getItem('theme');
-        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day';
-        document.documentElement.dataset.theme = t;
+        document.documentElement.dataset.theme = localStorage.getItem('theme') || 'night';
       } catch (e) {
-        document.documentElement.dataset.theme = 'day';
+        document.documentElement.dataset.theme = 'night';
       }
     </script>
   </head>
