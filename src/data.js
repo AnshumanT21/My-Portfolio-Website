@@ -99,7 +99,11 @@ export const projects = [
     where: 'Personal project',
     media: [
       { type: 'video', src: 'media/devvault-demo.mp4', poster: 'media/devvault-poster.jpg', caption: 'A 30-second tour of the four vaults: code, colour palettes, resources and projects.' },
-      { type: 'image', src: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1765138992/949111f4-e81b-4279-bc04-c18d90af7f7a_nb3j5l.png', caption: 'The Dev Vault logo.' },
+      { type: 'image', src: 'media/devvault-landing.jpg', caption: 'The landing page at devvault.co.' },
+      { type: 'image', src: 'media/devvault-code-vault.jpg', caption: 'Code Vault: every saved component, searchable.' },
+      { type: 'image', src: 'media/devvault-palettes.jpg', caption: 'Color Palettes: click a swatch to copy its hex code.' },
+      { type: 'image', src: 'media/devvault-resources.jpg', caption: 'Resources: inspiration, docs and tools, tagged.' },
+      { type: 'image', src: 'media/devvault-projects.jpg', caption: 'Projects: components, palettes and resources linked to one project.' },
     ],
     steps: [
       'Code Vault: save a component or snippet once and find it again in milliseconds',
