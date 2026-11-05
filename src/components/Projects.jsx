@@ -10,18 +10,18 @@ import ProjectModal from './ProjectModal'
 const LAYOUT = {
   claimiq: 'md:col-span-7 md:row-span-2',
   concierge: 'md:col-span-5',
-  signal: 'md:col-span-5',
+  hub: 'md:col-span-5',
   devvault: 'md:col-span-6',
   tryiton: 'md:col-span-3',
-  hub: 'md:col-span-3',
+  signal: 'md:col-span-3',
 }
 const IMG = {
   claimiq: 'aspect-[16/10]',
   concierge: 'aspect-[16/9]',
-  signal: 'aspect-[16/9]',
+  hub: 'aspect-[16/9]',
   devvault: 'aspect-[16/10]',
   tryiton: 'aspect-[4/5] md:aspect-square',
-  hub: 'aspect-[4/5] md:aspect-square',
+  signal: 'aspect-[4/5] md:aspect-square',
 }
 
 function Card({ p, onOpen, i }) {
@@ -76,7 +76,7 @@ function Card({ p, onOpen, i }) {
             />
           </div>
           <p className="font-mono text-xs text-ink-soft">{p.category}</p>
-          {(big || !['tryiton', 'hub'].includes(p.id)) && (
+          {(big || !['tryiton', 'signal'].includes(p.id)) && (
             <p className="mt-1 max-w-[52ch] text-[15px] leading-relaxed text-ink-soft">{p.blurb}</p>
           )}
           {big && (

@@ -44,6 +44,30 @@ export const projects = [
     stack: ['FastAPI', 'React/Vite', 'Supabase', 'Cloudflare R2', 'GPT-4o', 'Google Document AI'],
   },
   {
+    id: 'hub',
+    when: '2026',
+    where: 'Personal project',
+    media: [
+      { type: 'video', src: 'media/hub-demo.mp4', poster: 'media/hub-poster.jpg', caption: 'One day with Hub, on made-up sample data. Turn the sound on for the narration.' },
+    ],
+    steps: [
+      'Today shows what actually needs me, put together by Button, the mushroom in charge',
+      'Twelve blobs own one job each: six watch my project sites, the others handle mail, packages, spending, documents, health and school',
+      'Pigey sorts every inbox with AI, and Prof plans my week around classes, shifts and the gym',
+      'Exams become boss fights, and every study objective I finish lands a hit',
+    ],
+    title: 'Hub',
+    category: 'Private web app',
+    blurb: 'A private home-screen app for my projects, mail, money and school, run by a mushroom and a crew of 12 blobs.',
+    image: 'media/hub-card.jpg',
+    status: 'Private, one user',
+    challenge:
+      'My projects, mail, money, school and daily life were spread across separate apps. I wanted one place that told me what needs me today.',
+    results:
+      'A working app with exactly one user. It installs to the home screen, logs in with passkeys and runs entirely on Cloudflare’s free plan.',
+    stack: ['React', 'TypeScript', 'Cloudflare Workers', 'D1', 'OpenAI API', 'Web Push'],
+  },
+  {
     id: 'concierge',
     when: 'Summer 2026',
     where: 'Internship at Aionos',
@@ -64,28 +88,6 @@ export const projects = [
     results:
       'Multi-bot document management, an embeddable widget, and a production voice bot with real-time audio streaming. Any hospitality brand can deploy it without writing code.',
     stack: ['FastAPI', 'Supabase', 'OpenAI API', 'Cloudflare R2', 'React/Vite', 'Tailwind CSS'],
-  },
-  {
-    id: 'signal',
-    when: 'Summer 2026',
-    where: 'Internship at Aionos',
-    steps: [
-      'Collects brand and topic mentions from several sources',
-      'Normalizes them into one consistent format',
-      'Scores the sentiment of each mention',
-      'Shows the result in three live dashboard views',
-    ],
-    title: 'Signal Desk',
-    category: 'Analytics platform',
-    blurb: 'Pulls brand mentions from across the web into one live sentiment dashboard.',
-    image: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1786566535/565c7149-77d7-4650-b799-1c3812137cb2.png',
-    url: null,
-    status: 'Built at Aionos',
-    challenge:
-      'Mentions are spread over dozens of platforms with different APIs, rate limits and access rules. The collection layer had to pull from all of them reliably, normalize the results and surface sentiment trends without anyone watching it.',
-    results:
-      'Validated end to end with real test data across all three dashboard views, and designed so new sources can be added without reworking the pipeline.',
-    stack: ['Python', 'FastAPI', 'React/Vite', 'YouTube Data API', 'Serper.dev'],
   },
   {
     id: 'devvault',
@@ -133,28 +135,26 @@ export const projects = [
     stack: ['Python', 'React Native', 'Cloudinary', 'Supabase', 'TripoSR'],
   },
   {
-    id: 'hub',
-    when: '2026',
-    where: 'Personal project',
-    media: [
-      { type: 'video', src: 'media/hub-demo.mp4', poster: 'media/hub-poster.jpg', caption: 'One day with Hub, on made-up sample data. Turn the sound on for the narration.' },
-    ],
+    id: 'signal',
+    when: 'Summer 2026',
+    where: 'Internship at Aionos',
     steps: [
-      'Today shows what actually needs me, put together by Button, the mushroom in charge',
-      'Twelve blobs own one job each: six watch my project sites, the others handle mail, packages, spending, documents, health and school',
-      'Pigey sorts every inbox with AI, and Prof plans my week around classes, shifts and the gym',
-      'Exams become boss fights, and every study objective I finish lands a hit',
+      'Collects brand and topic mentions from several sources',
+      'Normalizes them into one consistent format',
+      'Scores the sentiment of each mention',
+      'Shows the result in three live dashboard views',
     ],
-    title: 'Hub',
-    category: 'Private web app',
-    blurb: 'A private home-screen app for my projects, mail, money and school, run by a mushroom and a crew of 12 blobs.',
-    image: 'media/hub-card.jpg',
-    status: 'Private, one user',
+    title: 'Signal Desk',
+    category: 'Analytics platform',
+    blurb: 'Pulls brand mentions from across the web into one live sentiment dashboard.',
+    image: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1786566535/565c7149-77d7-4650-b799-1c3812137cb2.png',
+    url: null,
+    status: 'Built at Aionos',
     challenge:
-      'My projects, mail, money, school and daily life were spread across separate apps. I wanted one place that told me what needs me today.',
+      'Mentions are spread over dozens of platforms with different APIs, rate limits and access rules. The collection layer had to pull from all of them reliably, normalize the results and surface sentiment trends without anyone watching it.',
     results:
-      'A working app with exactly one user. It installs to the home screen, logs in with passkeys and runs entirely on Cloudflare’s free plan.',
-    stack: ['React', 'TypeScript', 'Cloudflare Workers', 'D1', 'OpenAI API', 'Web Push'],
+      'Validated end to end with real test data across all three dashboard views, and designed so new sources can be added without reworking the pipeline.',
+    stack: ['Python', 'FastAPI', 'React/Vite', 'YouTube Data API', 'Serper.dev'],
   },
 ]
 
