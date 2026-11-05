@@ -133,25 +133,28 @@ export const projects = [
     stack: ['Python', 'React Native', 'Cloudinary', 'Supabase', 'TripoSR'],
   },
   {
-    id: 'booksanta',
-    when: '2022',
-    where: 'WhiteHat Jr certification project',
-    steps: [
-      'Donors list the books they are done with',
-      'Readers nearby request the ones they want',
-      'The app connects the two so the book changes hands',
+    id: 'hub',
+    when: '2026',
+    where: 'Personal project',
+    media: [
+      { type: 'video', src: 'media/hub-demo.mp4', poster: 'media/hub-poster.jpg', caption: 'One day with Hub, on made-up sample data. Turn the sound on for the narration.' },
     ],
-    title: 'Book Santa',
-    category: 'Mobile app',
-    blurb: 'A peer-to-peer app for giving away and finding books near you.',
-    image: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1764705418/unnamed_erc65q.jpg',
-    url: 'https://github.com/AnshumanT21/Book-Santa-App',
-    status: 'On GitHub',
+    steps: [
+      'Today shows what actually needs me, put together by Button, the mushroom in charge',
+      'Twelve blobs own one job each: six watch my project sites, the others handle mail, packages, spending, documents, health and school',
+      'Pigey sorts every inbox with AI, and Prof plans my week around classes, shifts and the gym',
+      'Exams become boss fights, and every study objective I finish lands a hit',
+    ],
+    title: 'Hub',
+    category: 'Private web app',
+    blurb: 'A private home-screen app for my projects, mail, money and school, run by a mushroom and a crew of 12 blobs.',
+    image: 'media/hub-card.jpg',
+    status: 'Private, one user',
     challenge:
-      'Books gather dust after one read while other people can’t afford new ones. The app connects the two.',
+      'My projects, mail, money, school and daily life were spread across separate apps. I wanted one place that told me what needs me today.',
     results:
-      'A complete cross-platform mobile app, and my first real lesson in state management and shipping something end to end.',
-    stack: ['JavaScript', 'React Native', 'Firebase'],
+      'A working app with exactly one user. It installs to the home screen, logs in with passkeys and runs entirely on Cloudflare’s free plan.',
+    stack: ['React', 'TypeScript', 'Cloudflare Workers', 'D1', 'OpenAI API', 'Web Push'],
   },
 ]
 

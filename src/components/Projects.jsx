@@ -13,7 +13,7 @@ const LAYOUT = {
   signal: 'md:col-span-5',
   devvault: 'md:col-span-6',
   tryiton: 'md:col-span-3',
-  booksanta: 'md:col-span-3',
+  hub: 'md:col-span-3',
 }
 const IMG = {
   claimiq: 'aspect-[16/10]',
@@ -21,7 +21,7 @@ const IMG = {
   signal: 'aspect-[16/9]',
   devvault: 'aspect-[16/10]',
   tryiton: 'aspect-[4/5] md:aspect-square',
-  booksanta: 'aspect-[4/5] md:aspect-square',
+  hub: 'aspect-[4/5] md:aspect-square',
 }
 
 function Card({ p, onOpen, i }) {
@@ -76,7 +76,7 @@ function Card({ p, onOpen, i }) {
             />
           </div>
           <p className="font-mono text-xs text-ink-soft">{p.category}</p>
-          {(big || !['tryiton', 'booksanta'].includes(p.id)) && (
+          {(big || !['tryiton', 'hub'].includes(p.id)) && (
             <p className="mt-1 max-w-[52ch] text-[15px] leading-relaxed text-ink-soft">{p.blurb}</p>
           )}
           {big && (
