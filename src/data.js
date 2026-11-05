@@ -49,6 +49,10 @@ export const projects = [
     where: 'Personal project',
     media: [
       { type: 'video', src: 'media/hub-demo.mp4', poster: 'media/hub-poster.jpg', caption: 'One day with Hub, on made-up sample data. Turn the sound on for the narration.' },
+      { type: 'image', src: 'media/hub-today.jpg', caption: 'Today, the crew and sorted mail. Real screens, made-up sample data.' },
+      { type: 'image', src: 'media/hub-boss.jpg', caption: 'Prof, a boss fight mid-battle and Plan my Week.' },
+      { type: 'image', src: 'media/hub-crew.jpg', caption: 'Dash tracking packages, The Daily and Penny.' },
+      { type: 'image', src: 'media/hub-life.jpg', caption: 'Pulse, the morning stand-up and Keeper.' },
     ],
     steps: [
       'Today shows what actually needs me, put together by Button, the mushroom in charge',
