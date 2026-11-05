@@ -34,7 +34,7 @@ export const projects = [
     title: 'ClaimIQ',
     category: 'AI SaaS platform',
     blurb: 'Reads raw insurance claim documents and writes the client-ready report.',
-    image: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1786565570/0fe5cc2d-4f3b-47bb-bb64-150051468a8c.png',
+    image: 'media/claimiq-cover.jpg',
     url: 'https://claimiq.in/',
     status: 'Live in production',
     challenge:
